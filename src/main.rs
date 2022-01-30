@@ -13,6 +13,26 @@ fn main() {
     let mut atomname = String::new();
     let exitstat:bool = false; 
     let mut inval = String::new();
+
+
+      println!("");
+      println!("");
+      println!("    ________                          __     ____          __         ");              
+      println!("   / ____/ /__  ____ ___  ___  ____  / /_   /  _/___  ____/ /__  _  __");                 
+      println!("  / __/ / / _ \\/ __ `__ \\/ _ \\/ __ \\/ __/   / // __ \\/ __  / _ \\| |/_/");                
+      println!(" / /___/ /  __/ / / / / /  __/ / / / /_   _/ // / / / /_/ /  __/>  <");                 
+      println!("/_____/_/\\___/_/ /_/ /_/\\___/_/ /_/\\__/  /___/_/ /_/\\__,_/\\___/_/|_|");               
+                                                                      
+
+
+
+
+
+
+
+
+
+
     
     let elements = ["Please"," Hydrogen"," Helium","Lithium"," Beryllium","Boron","Carbon"," Nitrogen","Oxygen","Fluorine","Neon","Sodium","Magnesium","Aluminium","Silicon","Phosphorus","Sulfur"," Chlorine","Argon","Potassium","Calcium "," Scandium","Titanium","Vanadium",
                     "Chromium","Manganese"," Iron","Cobalt","Nickel","Copper","Zinc","Gallium","Germanium","Arsenic"," Selenium","Bromine","Krypton","Rubidium","Strontium","  Yttrium","Zirconium ","Niobium ","Molybdenum ","Technetium ","Ruthenium ","Rhodium","Palladium","Silver",
@@ -46,8 +66,6 @@ fn main() {
              let mut found:bool = false;
              println!("Please enter the atomic number: ");
              stdin().read_line(&mut atomname).expect("Please provide a proper input,(Numbers only)");
-            //let atomname: String = atomname.trim().parse().expect("Please provide a");
-             //let atomname:String = atomname.to_lowercase().to_string();
              println!("{}",atomname);
              let mut x:usize = 1;
           while found == false {
