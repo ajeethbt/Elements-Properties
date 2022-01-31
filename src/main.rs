@@ -8,10 +8,8 @@ fn compileshow() {
 fn main() {
     compileshow();
     let mut atomnumb = String::new();
-    //let val = String::new();
     let mut atomname = String::new();
     let exitstat:bool = false; 
-    let mut inval = String::new();
 
 
       println!("");
@@ -43,6 +41,7 @@ fn main() {
     while exitstat != true {
             
          println!("\n\rWelcome to Periodic Index Please Choose the following options below: \n\r Get the name and symbol of the element from atomic number: 1 \n\r Get the atomic number and name from the element name: 2 \n\r Get the atomic number from the element symbol: 3 \n\r ");
+         let mut inval = String::new();
          stdin().read_line(&mut inval).expect("Please provide a proper input,(Numbers only)");
          let inval:u8 = inval.trim().parse().expect("Error");
          
@@ -69,7 +68,6 @@ fn main() {
               } 
               if atomname == elements[x]{
                 println!("{}",atomname);
-                found = true;
               }
               found = true;
              }
