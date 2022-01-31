@@ -1,6 +1,5 @@
 
 use std::io::stdin;
-use std::io::BufRead;
 
 fn compileshow() {
    println!("Compiling please wait...");   
@@ -28,16 +27,11 @@ fn main() {
 
 
 
-
-
-
-
-
     
-    let elements = ["Please"," Hydrogen"," Helium","Lithium"," Beryllium","Boron","Carbon"," Nitrogen","Oxygen","Fluorine","Neon","Sodium","Magnesium","Aluminium","Silicon","Phosphorus","Sulfur"," Chlorine","Argon","Potassium","Calcium "," Scandium","Titanium","Vanadium",
-                    "Chromium","Manganese"," Iron","Cobalt","Nickel","Copper","Zinc","Gallium","Germanium","Arsenic"," Selenium","Bromine","Krypton","Rubidium","Strontium","  Yttrium","Zirconium ","Niobium ","Molybdenum ","Technetium ","Ruthenium ","Rhodium","Palladium","Silver",
-                    "Cadmium "," Indium ","Tin","Antimony"," Tellurium","Iodine","Xenon","Cesium","Barium","Lanthanum","Cerium"," Praseodymium","Neodymium"," Promethium "," Samarium ","Europium "," Gadolinium","Terbium "," Dysprosium ","Holmium "," Erbium","Thulium","Ytterbium","Lutetium","Hafnium",
-                    "Tantalum "," Tungsten","Rhenium ","Osmium ","Iridium ","Platinum","Gold","Mercury"," Thallium","Lead ","Bismuth"," Polonium" ,"Astatine","Radon ","Francium ","Radium"," Actinium","Thorium"," Protactinium","Uranium","Neptunium","Plutonium","Americium","Curium","Berkelium","Californium"];
+    let elements = ["Please"," hydrogen"," helium","lithium"," beryllium","boron","carbon"," nitrogen","oxygen","fluorine","neon","sodium","magnesium","aluminium","silicon","phosphorus","sulfur"," chlorine","argon","potassium","calcium "," scandium","titanium","vanadium",
+                    "chromium","manganese"," iron","cobalt","nickel","copper","zinc","gallium","germanium","arsenic"," selenium","bromine","krypton","rubidium","strontium","  yttrium","zirconium ","niobium ","molybdenum ","technetium ","ruthenium ","rhodium","palladium","silver",
+                    "cadmium "," indium ","tin","antimony"," tellurium","iodine","xenon","cesium","barium","lanthanum","cerium"," praseodymium","neodymium"," promethium "," samarium ","europium "," gadolinium","terbium "," dysprosium ","holmium "," erbium","thulium","ytterbium","lutetium","hafnium",
+                    "tantalum "," tungsten","rhenium ","osmium ","iridium ","platinum","gold","mercury"," thallium","lead ","bismuth"," polonium" ,"astatine","radon ","francium ","radium"," actinium","thorium"," protactinium","uranium","neptunium","plutonium","americium","curium","berkelium","californium"];
     let elesymb = [" ","H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","K","Ar","Ca","Sc","Ti","V","Cr","Mn","Fe","Ni","Co","Cu","Zn","Ga","Ge","As","Se","Be","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","I","Te","Xe","Cs","Ba",
                    "La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At"];
     
@@ -63,21 +57,23 @@ fn main() {
             }
 
          } else if inval == 2 {
-             let mut found:bool = false;
-             println!("Please enter the atomic number: ");
-             stdin().read_line(&mut atomname).expect("Please provide a proper input,(Numbers only)");
+             stdin().read_line(&mut atomname).expect("send helps");
+             let atomname = atomname.trim_matches(' '); 
+             let atomname = atomname.to_lowercase();
              println!("{}",atomname);
-             let mut x:usize = 1;
-          while found == false {
-               if atomname == elements[x]  {
-                   found = true;
-                   let whichone = x;
-                   println!("this is {}",elements[whichone]);
-               }else {
-                   x = x+1;
-               }
-             
-          }
+             let mut x = 1;
+             let mut found = false;
+             while found == false {
+              if x < 90 {
+                x = x + 1;
+              } 
+              if atomname == elements[x]{
+                println!("{}",atomname);
+                found = true;
+              }
+              found = true;
+             }
+        
                
          } else if inval == 3 {
 
