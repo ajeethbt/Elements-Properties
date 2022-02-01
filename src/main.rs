@@ -7,8 +7,6 @@ fn compileshow() {
 
 fn main() {
     compileshow();
-    let mut atomnumb = String::new();
-    let mut atomname = String::new();
     let exitstat:bool = false; 
 
 
@@ -46,6 +44,7 @@ fn main() {
          let inval:u8 = inval.trim().parse().expect("Error");
          
          if inval == 1 {
+            let mut atomnumb = String::new();
             println!("Please enter the atomic number: ");
             stdin().read_line(&mut atomnumb).expect("Please provide a proper input,(Numbers only)");
             let atomnumb:usize = atomnumb.trim().parse().expect("Please provide a proper input(Numbers only)");
@@ -56,21 +55,27 @@ fn main() {
             }
 
          } else if inval == 2 {
+             println!("Please enter the name of your element: ");
+             let mut atomname = String::new();
              stdin().read_line(&mut atomname).expect("send helps");
-             let atomname = atomname.trim_matches(' '); 
-             let atomname = atomname.to_lowercase();
-             println!("{}",atomname);
-             let mut x = 1;
+             let atomname = atomname.trim_matches(' ').to_lowercase(); 
+             let mut x:usize = 0;
              let mut found = false;
-             while found == false {
-              if x < 90 {
-                x = x + 1;
-              } 
-              if atomname == elements[x]{
-                println!("{}",atomname);
-              }
-              found = true;
-             }
+               while found != true {
+                 if x < 90 {
+                  x = x+1;
+                 }
+                  x = x;
+                  println!("{}",elements[x]);
+                  if atomname == elements[x].trim_matches(' ').to_lowercase() {
+                    println!("{}",x);
+                    found = true;
+                  }
+                  found = found;
+             
+               } 
+              
+             
         
                
          } else if inval == 3 {
@@ -82,8 +87,9 @@ fn main() {
          }
 
     }
-
+  
   }
+  
 
 
    
