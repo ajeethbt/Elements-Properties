@@ -58,32 +58,23 @@ fn main() {
              println!("Please enter the name of your element: ");
              let mut atomname = String::new();
              stdin().read_line(&mut atomname).expect("send helps");
-             let atomname = atomname.trim_matches(' ').to_lowercase(); 
-             let mut x:usize = 0;
-             let mut found = false;
-               while found != true {
-                 if x < 90 {
-                  x = x+1;
-                 }
-                  x = x;
-                  println!("{}",elements[x]);
-                  if atomname == elements[x].trim_matches(' ').to_lowercase() {
-                    println!("{}",x);
-                    found = true;
-                  }
-                  found = found;
-             
-               } 
-              
-             
-        
-               
+             atomname = atomname.trim().to_lowercase();
+
+             let foo = elements.into_iter().position(|x|{
+                return x.to_string()==atomname;
+             }).unwrap();
+             println!("The symbol is: {}",elesymb[foo]);
          } else if inval == 3 {
-
-
+             println!("Please enter the symbol of your element: ");
+             let mut atomname = String::new();
+             stdin().read_line(&mut atomname).expect("send helps");
+             atomname = atomname.trim().to_lowercase();
+             let foo = elesymb.into_iter().position(|x|{
+                 return x.to_string().to_lowercase()==atomname;
+             }).unwrap();
+             println!("The element is: {}",elements[foo]);
          } else {
-
-
+            println!("Please enter 1, 2 or 3 only");
          }
 
     }
